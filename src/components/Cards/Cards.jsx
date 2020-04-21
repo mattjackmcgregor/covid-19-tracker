@@ -15,7 +15,7 @@ const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>
           <CardContent>
-            <Typography color='textSecondary' gutterBottom>Infected</Typography>
+            <Typography color='textSecondary' gutterBottom className={styles.infected_title}>Infected</Typography>
             <Typography variant='h5'>{confirmed.value}</Typography>
             <Typography color='textSecondary'>{new Date(lastUpdate).toDateString()}</Typography>
             <Typography variant='body2'>number of active covid 19 cases</Typography>
@@ -23,7 +23,7 @@ const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
         </Grid>
         <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>
           <CardContent>
-            <Typography color='textSecondary' gutterBottom>Recovered</Typography>
+            <Typography color='textSecondary' gutterBottom className={styles.recovered_title}>Recovered</Typography>
             <Typography variant='h5'>{recovered.value}</Typography>
             <Typography color='textSecondary'>{new Date(lastUpdate).toDateString()}</Typography>
             <Typography variant='body2'>number of recovered covid 19 cases</Typography>
@@ -31,7 +31,7 @@ const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
         </Grid>
         <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths)}>
           <CardContent>
-            <Typography color='textSecondary' gutterBottom>Deaths</Typography>
+            <Typography color='textSecondary' gutterBottom className={styles.deaths_title}>Deaths</Typography>
             <Typography variant='h5'>{deaths.value}</Typography>
             <Typography color='textSecondary'>{new Date(lastUpdate).toDateString()}</Typography>
             <Typography variant='body2'>number of deaths from covid 19 cases</Typography>

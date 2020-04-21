@@ -17,3 +17,15 @@
 .deaths {
   border-bottom: 3px solid blue; 
 }
+
+.infected_title {
+  color: red !important;
+}
+
+.recovered_title {
+  color: green !important;
+}
+
+.deaths_title {
+  color: blue !important;
+}
