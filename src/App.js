@@ -21,15 +21,17 @@ export class App extends React.Component {
     //fetch data
     const data = await fetchData(country)
     //set state
+    this.setState({data, country})
     console.log('country data', data)
   }
 
   render() {
+    const {data, country} = this.state
     return (
       <div className={style.App}>
-       <Cards data={this.state.data}/>
+       <Cards data={data}/>
        <CountryPicker handleCountryChange={this.handleCountryChange} />
-       <Chart />
+       <Chart data={data} country={country} />
       </div>
     )
   }
