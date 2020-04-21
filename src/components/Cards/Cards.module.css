@@ -7,7 +7,7 @@
 }
 
 .infected {
-  border-bottom: 3px solid red; 
+  border-bottom: 3px solid blue; 
 }
 
 .recovered {
@@ -15,11 +15,11 @@
 }
 
 .deaths {
-  border-bottom: 3px solid blue; 
+  border-bottom: 3px solid red; 
 }
 
 .infected_title {
-  color: red !important;
+  color: blue !important;
 }
 
 .recovered_title {
@@ -27,5 +27,5 @@
 }
 
 .deaths_title {
-  color: blue !important;
+  color: red !important;
 }
