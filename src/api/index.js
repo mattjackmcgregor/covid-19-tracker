@@ -2,10 +2,13 @@ import axios from 'axios'
 
 const url = 'https://covid19.mathdro.id/api'
 
-export const fetchData = async () => {
+export const fetchData = async (country) => {
+  let dynamicUrl 
+  country ? dynamicUrl = `${url}/countries/${country}` : dynamicUrl = url
+
   try {
     //destructuring straight off the response obj
-    const {data: {confirmed, recovered, deaths, lastUpdate}} = await axios.get(url)
+    const {data: {confirmed, recovered, deaths, lastUpdate}} = await axios.get(dynamicUrl)
 
     return {confirmed, recovered, deaths, lastUpdate}
     

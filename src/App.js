@@ -6,7 +6,8 @@ import style from './App.module.css'
 
 export class App extends React.Component {
   state = {
-    data: {}
+    data: {},
+    country: ''
   }
   //how to use async with componentdidmount
   async componentDidMount () {
@@ -15,11 +16,19 @@ export class App extends React.Component {
     this.setState({data})
   }
   
+  handleCountryChange = async (country) => {
+    console.log(country)
+    //fetch data
+    const data = await fetchData(country)
+    //set state
+    console.log('country data', data)
+  }
+
   render() {
     return (
       <div className={style.App}>
        <Cards data={this.state.data}/>
-       <CountryPicker />
+       <CountryPicker handleCountryChange={this.handleCountryChange} />
        <Chart />
       </div>
     )
