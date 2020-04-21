@@ -10,16 +10,17 @@ const CountryPicker = () => {
 
   useEffect(() => {
     const fetchApi = async () => {
-      setCountries(await fetchCountries)
+      setCountries(await fetchCountries())
     }
     fetchApi()
   }, [])
-  
+
   return (
     <div className={styles.container}>
-      <FormControl>
+      <FormControl className={StyleSheet.formControl}>
       <NativeSelect>
         <option value='global'>Global</option>
+        {countries.map((country, i) => <option key={i} value={country}>{country}</option>)}
       </NativeSelect>
       </FormControl>
     
