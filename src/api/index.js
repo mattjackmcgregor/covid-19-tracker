@@ -32,9 +32,9 @@ export const fetchDailyData = async () => {
 export const fetchCountries = async () => {
   try {
     const {data: {countries}} = await axios.get(`${url}/countries`)
-    
-    console.log(countries)
-    return countries
+    const countryNames = countries.map(country => country.name)
+    console.log(countryNames)
+    return countryNames
 
   } catch (error) {
     console.log(error)
