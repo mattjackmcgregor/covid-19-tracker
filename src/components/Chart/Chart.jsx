@@ -15,10 +15,10 @@ const Chart = () => {
     console.log(dailyData)
     fetchApi()
     
-  })
+  }, [])
 
   const LineChart = (
-    dailyData.length !== 0 ? (
+    dailyData.length ? (
     <Line data={{
       labels: dailyData.map(({date}) => date),
       datasets: [{
@@ -39,7 +39,7 @@ const Chart = () => {
   )
 
   return (
-    <div>
+    <div className={styles.container}>
     {LineChart}
     </div>
   )

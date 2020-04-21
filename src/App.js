@@ -18,7 +18,6 @@ export class App extends React.Component {
   render() {
     return (
       <div className={style.App}>
-       <h1>covid 19 tracker</h1>
        <Cards data={this.state.data}/>
        <CountryPicker />
        <Chart />
