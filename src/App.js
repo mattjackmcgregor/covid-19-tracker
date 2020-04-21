@@ -5,18 +5,21 @@ import style from './App.module.css'
  import {fetchData} from './api'
 
 export class App extends React.Component {
-
+  state = {
+    data: {}
+  }
   //how to use async with componentdidmount
   async componentDidMount () {
     const data = await fetchData()
-    console.log(data)
+    // console.log(data)
+    this.setState({data})
   }
-
+  
   render() {
     return (
       <div className={style.App}>
        <h1>covid 19 tracker</h1>
-       <Cards />
+       <Cards data={this.state.data}/>
        <CountryPicker />
        <Chart />
       </div>
