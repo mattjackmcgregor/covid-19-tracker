@@ -41,15 +41,16 @@ const Chart = ({data: {confirmed, recovered, deaths}, country}) => {
   console.log(confirmed)
 
   const barChart = (
-    confirmed? (
+    confirmed ? (
       <Bar 
       data={{
-        label: ['Infected', 'Recovered', 'Deaths'],
+        labels: ['Infected', 'Recovered', 'Deaths'],
         datasets: [{
           label: 'People',
-          backgroundColor: ['blue', 'green', 'red']
+          backgroundColor: ['blue', 'green', 'red'],
+          data: [confirmed.value, recovered.value, deaths.value]
         }],
-        data: [confirmed.value, recovered.value, deaths.value]
+       
       }}
       options={{
         legend: {display: false},
