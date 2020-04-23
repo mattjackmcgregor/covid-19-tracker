@@ -18,14 +18,20 @@
   border-bottom: 3px solid red; 
 }
 
-.infected_title {
+.title_infected {
   color: blue !important;
 }
 
-.recovered_title {
+.title_recovered {
   color: green !important;
 }
 
-.deaths_title {
+.title_deaths {
   color: red !important;
+}
+
+@media(max-width: 770px) {
+  .card {
+    margin: 2%, 0 !important;
+  }
 }
