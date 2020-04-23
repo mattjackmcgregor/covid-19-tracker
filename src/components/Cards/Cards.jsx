@@ -60,7 +60,9 @@ const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
             <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>
               <CardContent>
                 <Typography color='textSecondary' gutterBottom className={styles.title_recovered}>Recovered</Typography>
-                <Typography variant='h5'>{recovered.value}</Typography>
+                <Typography variant='h5'>
+                  <CountUp start={0} end={recovered.value} duration={1.8} separator="," />
+                </Typography>
                 <Typography color='textSecondary'>{new Date(lastUpdate).toDateString()}</Typography>
                 <Typography variant='body2'>number of recovered covid 19 cases</Typography>
               </CardContent>
@@ -68,7 +70,9 @@ const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
             <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths)}>
               <CardContent>
                 <Typography color='textSecondary' gutterBottom className={styles.title_deaths}>Deaths</Typography>
-                <Typography variant='h5'>{deaths.value}</Typography>
+                <Typography variant='h5'>
+                  <CountUp start={0} end={deaths.value} duration={1.8} separator="," />
+                </Typography>
                 <Typography color='textSecondary'>{new Date(lastUpdate).toDateString()}</Typography>
                 <Typography variant='body2'>number of deaths from covid 19 cases</Typography>
               </CardContent>
